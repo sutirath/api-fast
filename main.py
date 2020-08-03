@@ -14,11 +14,13 @@ model.summary()
 app = FastAPI()
 
 #domain where this api is hosted for example : localhost:5000/docs to see swagger documentation automagically generated.
+@app.post("/")
+async def main():
+    return {"Hello World"}
+
 
 @app.post("/files/")
 async def create_file(file: bytes = File(...)):
-
-
     A = AudioSegment.from_file(file)
     test=A
     test = np.array(test.get_array_of_samples(), np.float32)
