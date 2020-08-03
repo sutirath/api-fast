@@ -1,10 +1,10 @@
 #import libraly
 from fastapi import FastAPI , File
-from pydub import AudioSegment
-import numpy as np
-import librosa
-import librosa.display
-from tensorflow.keras.models import  load_model
+#from pydub import AudioSegment
+#import numpy as np
+#import librosa
+#import librosa.display
+#from tensorflow.keras.models import  load_model
 
 
 
@@ -14,9 +14,10 @@ model.summary()
 app = FastAPI()
 
 #domain where this api is hosted for example : localhost:5000/docs to see swagger documentation automagically generated.
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+
+@app.post("/")
+async def main():
+    return {"file_size"}
 
 
 @app.post("/files/")
