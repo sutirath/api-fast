@@ -3,7 +3,7 @@ from fastapi import FastAPI, File, UploadFile
 app = FastAPI()
 
 
-@app.post("/")
+@app.get("/")
 def hello():
     return {"Hello World"}
 
