@@ -14,9 +14,9 @@ model.summary()
 app = FastAPI()
 
 #domain where this api is hosted for example : localhost:5000/docs to see swagger documentation automagically generated.
-@app.post("/")
-async def main():
-    return {"Hello World"}
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 
 @app.post("/files/")
