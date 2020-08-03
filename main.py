@@ -19,7 +19,7 @@ app = FastAPI()
 async def create_file(file: bytes = File(...)):
 
 
-    A = AudioSegment.from_file('sound.wav')
+    A = AudioSegment.from_file(file)
     test=A
     test = np.array(test.get_array_of_samples(), np.float32)
     test=librosa.feature.mfcc(test)
