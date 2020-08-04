@@ -9,6 +9,10 @@ names = ['bad','enemy','good','queen']
 model = load_model('model.h5')
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 @app.post("/files/")
 async def main(file: bytes = File(...)):
     A = AudioSegment.from_file(file)
